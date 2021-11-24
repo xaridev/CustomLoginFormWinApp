@@ -36,18 +36,9 @@ namespace DXApplication2.Win {
         public DXApplication2WindowsFormsApplication() {
             InitializeComponent();
 			InitializeDefaults();
-            //AuthenticationStandard authentication = new AuthenticationStandard();
-            //security = new SecurityStrategyComplex(typeof(PermissionPolicyUser), typeof(PermissionPolicyRole), authentication);
-            //security.RegisterXPOAdapterProviders();
-            //objectSpaceProvider = new SecuredObjectSpaceProvider(security, ConnectionString, null);
-
+            
             CreateCustomTemplate += DXApplication2WindowsFormsApplication_CreateCustomTemplate;
         }
-        
-        //protected override LogonController CreateLogonController()
-        //{
-        //    return new CustomDialogController();
-        //}
         private void DXApplication2WindowsFormsApplication_CreateCustomTemplate(object sender, CreateCustomTemplateEventArgs e)
         {
             if (e.Context == TemplateContext.PopupWindow)
@@ -81,23 +72,14 @@ namespace DXApplication2.Win {
                 DialogResult dialogResult = XtraMessageBox.Show(ex.Message, "Log in failed", System.Windows.Forms.MessageBoxButtons.OK);
                 if (dialogResult == DialogResult.OK)
                 {
-                    //popupForm1.Visible = false;
-                    //popupForm1.Close();
-                    //popupForm1.ShowDialog();
                     logged = false;
-                    
                 }
                  
             }
             return logged;
         }
 
-        private void PopupForm1_LostFocus(object sender, EventArgs e)
-        {
-            ((PopupForm1)sender).Close();
-        }
-
-        private void DXApplication2WindowsFormsApplication_DatabaseVersionMismatch(object sender, DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs e) {
+             private void DXApplication2WindowsFormsApplication_DatabaseVersionMismatch(object sender, DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs e) {
 #if EASYTEST
             e.Updater.Update();
             e.Handled = true;

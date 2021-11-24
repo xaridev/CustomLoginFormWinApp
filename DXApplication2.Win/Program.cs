@@ -32,7 +32,6 @@ namespace DXApplication2.Win {
             }
             Tracing.Initialize();
             DXApplication2WindowsFormsApplication winApplication = new DXApplication2WindowsFormsApplication();
-            // winApplication.CreateCustomLogonWindowObjectSpace += application_CreateCustomLogonWindowObjectSpace;
             // Refer to the https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112680.aspx help article for more details on how to provide a custom splash form.
             //winApplication.SplashScreen = new DevExpress.ExpressApp.Win.Utils.DXSplashScreen("YourSplashImage.png");
             //winApplication.SplashScreen = new CoralReef.Login.LoginScreen();
@@ -58,24 +57,5 @@ namespace DXApplication2.Win {
                 winApplication.HandleException(e);
             }
         }
-
-        
-   //     private static void application_CreateCustomLogonWindowObjectSpace(object sender,
-   //CreateCustomLogonWindowObjectSpaceEventArgs e)
-   //     {
-   //         e.ObjectSpace = ((XafApplication)sender).CreateObjectSpace(typeof(AuthenticationStandardLogonParameters));
-   //         NonPersistentObjectSpace nonPersistentObjectSpace = e.ObjectSpace as NonPersistentObjectSpace;
-   //         if (nonPersistentObjectSpace != null)
-   //         {
-   //             if (!nonPersistentObjectSpace.IsKnownType(typeof(PermissionPolicyUser), true))
-   //             {
-   //                 IObjectSpace additionalObjectSpace = ((XafApplication)sender).CreateObjectSpace(typeof(PermissionPolicyUser));
-   //                 nonPersistentObjectSpace.AdditionalObjectSpaces.Add(additionalObjectSpace);
-   //                 nonPersistentObjectSpace.Disposed += (s2, e2) => {
-   //                     additionalObjectSpace.Dispose();
-   //                 };
-   //             }
-   //         }
-   //     }
     }
 }

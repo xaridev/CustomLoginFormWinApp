@@ -183,12 +183,6 @@
     <Compile Include="Controllers\MyAuthenticationStandard.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controllers\CustomDialogController.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controllers\CustomWinController.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Controllers\XtraForm1.cs">
       <SubType>Form</SubType>
     </Compile>
